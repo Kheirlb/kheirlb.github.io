@@ -1,6 +1,11 @@
-## Welcome to Karl Parks GitHub Pages
+## Welcome to my GitHub Website!
 
-Please check out my following projects!
+My name is Karl Parks and I love coding and sharing ideas online.  
+Please check out some of my following projects!  
 
-https://kheirlb.github.io/rockets/
+Rocket Simulation and Design Files  
+https://kheirlb.github.io/rockets/  
+  
+Raw Data over UVC from PureThermal 2 - Lepton 3.5 - Python   
+https://github.com/Kheirlb/purethermal1-uvc-capture  
 
