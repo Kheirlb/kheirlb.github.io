@@ -1,4 +1,4 @@
-## Welcome to my GitHub Website!
+## Welcome!
 
 My name is Karl Parks and I love to code. I'm excited to present my GitHub Pages website featuring some of my best programming projects. Have fun taking a look around!
 
