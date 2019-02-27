@@ -1,7 +1,6 @@
 ## Welcome to my GitHub Website!
 
-My name is Karl Parks and I love coding.  
-Please check out some of my following projects!  
+My name is Karl Parks and I love to code. I'm excited to present my GitHub Pages website featuring some of my best programming projects. Have fun taking a look around!
 
 [Rocket Simulation and Design Files](https://kheirlb.github.io/rockets/)  
   
