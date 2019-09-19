@@ -8,4 +8,4 @@ My name is Karl Parks and I love to code. I'm excited to present my GitHub Pages
 
 ## Programming/Scripting Language Proficiency
 
-![Screenshot](radar.JPG?raw=true)
+![Screenshot](images/radar.JPG?raw=true)
