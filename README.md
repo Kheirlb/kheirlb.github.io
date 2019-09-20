@@ -2,7 +2,10 @@
 
 My name is Karl Parks and I love to code. I'm excited to present my GitHub Pages website featuring some of my best programming projects. Have fun taking a look around!
 
-[Plotting on the Web](chartjs.html)
+<html>
+<a href="chartjs.html">Plotting on the Web</a>
+
+</html>
 
 [Rocket Simulation and Design Files](https://kheirlb.github.io/rockets/)  
 
