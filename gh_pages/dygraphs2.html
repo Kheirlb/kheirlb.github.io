@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dygraph/2.1.0/dygraph.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dygraph/2.1.0/dygraph.min.css" />
+        <link rel="stylesheet" href="../css/styles.css">
+        <title>A dygraphs Plot</title>
+    </head>
+    <body>
+        <a href="../index.html">Return to Home Page</a>
+        <div class="row">
+            <div class="column" id="graphdiv2" style="width: 600px; height:600px;"></div>
+            <div class="column" id="legendDiv"></div>
+        </div>
+        <div class="row" id="something" style="width: 600px;">
+            <div class="slidecontainer">
+                <input type="range" min="1" max="10" value="1" class="slider" id="myRange">
+            </div>
+            <span>Value:</span>
+            <span id="demo"></span>
+        </div>
+        <script src="../js/dygraphChamber.js"> </script>
+    </body>
+</html>
