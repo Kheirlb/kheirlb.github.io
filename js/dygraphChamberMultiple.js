@@ -7,7 +7,7 @@ g2 = new Dygraph(
     {
         legend: 'always',
         labelsDiv: leg,
-        title: 'Karl made a Web Chart - SHF-G Chamber Pressure Data',
+        title: 'Karl made a Web Chart - SHF-F Chamber Pressure Data',
         ylabel: 'Pressure [psi]',
         xlabel: 'Time [s]',
         visibility: visibleArray,
