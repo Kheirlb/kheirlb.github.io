@@ -8,6 +8,8 @@ My name is Karl Parks and I love to robotics, engineering, science, space, and m
 
 [First dygraphs plot! Learning how to plot with Javascript!](gh_pages/dygraphs3.html)
 
+[CSV Online Plotter](gh_pages/plotlyTest.html)
+
 ## Programming/Scripting Language Proficiency
 ![Screenshot](images/radar.JPG?raw=true)
 
