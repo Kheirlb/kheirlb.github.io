@@ -1,0 +1,29 @@
+.button {
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+}
+
+container {
+    position: relative;
+    height: 600px;
+}
+
+#left, #right {
+    position: absolute;
+    top: 0px; bottom: 0px;
+}
+
+#left {
+    left: 25px; width: 300px;
+    background: white;
+}
+
+#right {
+    left: 325px; right: 0px;
+    background: white;
+}

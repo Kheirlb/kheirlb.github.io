@@ -2,9 +2,33 @@
 <html>
     <head>
         <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <link rel="stylesheet" href="../css/stylesPlotly.css">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+
+        <script src="../js/papaparse.min.js"></script>
     </head>
     <body>
-        <div id="graph" style="width:600px;height:600px;"></div>
-        <script src="../js/plotlyTest.js"></script>
+        <div id="container">
+            <div id="left">
+                <h1>CSV Online Plotter</h1>
+                <p>Use the button below to select the local csv data file you would like to plot.<br><br>Keep in mind:</p>
+                <ul>
+                    <li>All data must be integers or floats.</li>
+                    <li>Currently the header will be ignored until I figure out how to edit the axis/title/legend and shit.</li>
+                    <li>First column of the csv is the x axis. </li>
+                    <li>All remaining columns are various traces on the y axis.</li>
+                </ul>
+                <input type="file" name="File Upload" id="txtFileUpload" accept=".csv" />
+                <br>
+                <p>It finally kinda works!!!! Javascript is hard. The slider on the sample plot doesn't really do anything useful, I know.</p>
+            </div>
+            <div id="right">
+                <div id="graph" style="width:1000px;height:600px;"></div>
+            </div>
+        </div>
+        <script src="../js/plotlyFile.js"></script>
     </body>
 </html>
