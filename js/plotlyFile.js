@@ -1,4 +1,7 @@
 document.getElementById('txtFileUpload').addEventListener('change', upload, false);
+// inTitle = document.getElementById('inTitle');
+// inYTitle = document.getElementById('inYTitle');
+// inXTitle = document.getElementById('inXTitle');
 
 var plotlyData;
 //var xVec = [];
@@ -10,6 +13,17 @@ var trace = {
     x: [],
     y: [],
     type: 'scatter'
+}
+
+var plotLayout = {
+    title: 'Please Edit Plot Title',
+    xaxis: {
+        title: 'Please Edit X Axis Title'
+    },
+    yaxis: {
+        title: 'Please Edit Y Axis Title'
+    },
+    hovermode:'closest',
 }
 
 function upload(evt) {
@@ -53,11 +67,12 @@ function createVec() {
             // }
         }
         console.log(yVec[0]);
+        let name = Object.keys(plotlyData.data[0])[col];
         // tempObj = Object.create(trace);
         // tempObj.x = xVec;
         // tempObj.y = yVec;
         //dataTraces[col-1] = {x: xVec, y: yVec};
-        dataToPlot.push({x: xVec, y: yVec});
+        dataToPlot.push({x: xVec, y: yVec, name: name});
     }
     //create each trace
     // for (col = 0; col < Object.values(plotlyData.data[1]).length; col++) {
@@ -72,38 +87,15 @@ function createVec() {
     // dataTraces[1] = {x: xVec, y: yVec};
     //dataToPlot.push(dataTraces[0]);
     // dataToPlot.push(dataTraces[1]);
-
     //dataToPlot = [dataTraces[0], dataTraces[1]];
     //dataToPlot.push(dataTraces[dataTraces.length - 1]);
-    Plotly.newPlot('graph', dataToPlot);
+    plotLayout.xaxis.title = Object.keys(plotlyData.data[0])[0];
+    plotLayout.yaxis.title = Object.keys(plotlyData.data[0])[1];
+    Plotly.newPlot('graph', dataToPlot, plotLayout);
 }
 
 Plotly.plot('graph', [{
   x: [1, 2, 3],
   y: [2, 1, 3]
-}], {
-  sliders: [{
-    pad: {t: 30},
-    currentvalue: {
-      xanchor: 'right',
-      prefix: 'color: ',
-      font: {
-        color: '#888',
-        size: 20
-      }
-    },
-    steps: [{
-      label: 'red',
-      method: 'restyle',
-      args: ['line.color', 'red']
-    }, {
-      label: 'green',
-      method: 'restyle',
-      args: ['line.color', 'green']
-    }, {
-      label: 'blue',
-      method: 'restyle',
-      args: ['line.color', 'blue']
-    }]
-  }]
-});
+}], plotLayout
+);
