@@ -1,0 +1,36 @@
+body
+{
+background-color:#FFFFFF;
+width:75%
+}
+a:link {color:#2E8B57;}
+a:visited {color:#698B69;}
+a:hover {color:#00CD00;}
+a:active {color:#F08080;}
+a {text-decoration:none;}
+hr {color:#6B6B6B;}
+div.hans {
+text-color:#6B6B6B;
+font-size:20px;
+text-align:left;
+}
+div.navlinks{
+word-spacing:90px;
+text-align:center;
+}
+div.picture{
+width:220px
+}
+div.address{text-align:left;}
+div.ht{
+vertical-align:top;
+text-color:#6B6B6B;
+text-align:right;
+}
+
+.labeled span {display: none;}
+div:hover.labeled span {display: block; position: absolute; top: 45px; right:0px; width: 18%; padding: 5px; margin: 10px;  color: black; background: #FFFFFF; text-align: center;z-index: 100;}
+
+
+
+

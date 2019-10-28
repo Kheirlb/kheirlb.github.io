@@ -1,0 +1,189 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>SIR Model</title>
+<link rel="stylesheet" type="text/css" href="../scripts/mainstyle.css" />
+<script language="javascript" type="text/javascript" src="../scripts/flot/jquery.js"></script>
+<script language="javascript" type="text/javascript" src="../scripts/flot/jquery.flot.js"> </script>
+<script language="javascript" type="text/javascript" src="../scripts/odesim.js"> </script>
+<!--[if IE]><script language="javascript" type="text/javascript" src="../scripts/flot/excanvas.js"> </script><![endif]-->
+
+<script type="text/javascript">
+//** Parameters **
+stp = .01; //step size
+
+//** Function **
+function sir(x,parm)
+{
+  return([-parm[0]*x[0]*x[1]/(x[0]+x[1]+x[2]),parm[0]*x[0]*x[1]/(x[0]+x[1]+x[2]) - parm[1]*x[1],parm[1]*x[1]]);
+}
+</script>
+<script type='text/javascript'>
+function testload()
+{
+  alert('page loaded again');
+};
+
+function getCookie(c_name)
+{
+if (document.cookie.length>0)
+  {
+  c_start=document.cookie.indexOf(c_name + "=");
+  if (c_start!=-1)
+    {
+    c_start=c_start + c_name.length+1;
+    c_end=document.cookie.indexOf(";",c_start);
+    if (c_end==-1) c_end=document.cookie.length;
+    return unescape(document.cookie.substring(c_start,c_end));
+    }
+  }
+return "";
+}
+
+function setCookie(c_name,value,expiredays)
+{
+var exdate=new Date();
+exdate.setDate(exdate.getDate()+expiredays);
+document.cookie=c_name+ "=" +escape(value)+((expiredays==null) ? "" : "; expires="+exdate.toGMTString());
+}
+
+function createCookie(name,value,days) {
+	if (days) {
+		var date = new Date();
+		date.setTime(date.getTime()+(days*24*60*60*1000));
+		var expires = "; expires="+date.toGMTString();
+	}
+	else var expires = "";
+	document.cookie = name+"="+value+expires+"; path=/";
+}
+
+
+
+function setvals(form)
+{
+var res = new Array();
+res[0] = eval(form.Alpha.value);
+res[1] = eval(form.Beta.value);
+res[2] = eval(form.initialS.value);
+res[3] = eval(form.initialI.value);
+res[4] = eval(form.initialR.value);
+res[5] = 100*eval(form.iters.value)
+//alert(res)
+setCookie('testval4',res,1);
+};
+
+function checkCookie()
+{
+var res = new Array()
+val=getCookie('testval4');
+if (val!=null && val!="")
+  {
+    res = val;
+  }
+else
+  {
+    res[0] = .3;
+    res[1] = .9;
+    res[2] = 10;
+    res[3] = 1;
+    res[4] = 0;
+    res[5] = 1000;
+    document.forms["mainform"].elements["Alpha"].value = res[0];
+    document.forms["mainform"].elements["Beta"].value = res[1];
+    document.forms["mainform"].elements["initialS"].value = res[2];
+    document.forms["mainform"].elements["initialI"].value = res[3];
+    document.forms["mainform"].elements["initialR"].value = res[4];
+    document.forms["mainform"].elements["iters"].value = res[5]/100;
+    setCookie('testval4',res,1);
+  }
+  return(res)
+};
+</script>
+
+</head>
+<body onLoad="checkCookie()">
+<center>
+<div class="header">
+<div class='hans'>Hans Nesse - Global Health - SIR Model</div><br>
+<hr>
+<div class='navlinks'>
+<a href='../index.html'>Hans</a>
+<a href='globalhealth-SPR10.html'>Class</a>
+<a href='http://my.asu.edu'>MyASU</a>
+</div>
+</div>
+</center>
+
+<script id="source" language="javascript" type="text/javascript">
+$(function () {
+    var pv = eval("["+getCookie('testval4')+"]");
+    document.forms["mainform"].elements["Alpha"].value = pv[0];
+    document.forms["mainform"].elements["Beta"].value = pv[1];
+    document.forms["mainform"].elements["initialS"].value = pv[2];
+    document.forms["mainform"].elements["initialI"].value = pv[3];
+    document.forms["mainform"].elements["initialR"].value = pv[4];
+    document.forms["mainform"].elements["iters"].value = pv[5]/100;
+    var valu = rk4(sir,[pv[0],pv[1]],.01,[0,pv[2],pv[3],pv[4]],pv[5]);
+    var d1 = valu[1];
+    var d2 = valu[2];
+    var d3 = valu[3];
+    var data = [ {label:'S', data:d1}, {label:'I', data:d2}, {label:'R', data:d3}];
+    $.plot($("#placeholder"), data);
+});
+</script>
+
+
+<table cellpadding=8 border=0>
+<tr>
+<td>
+<img src='population.png' alt='Population graph label'>
+</td>
+<td>
+<div id="placeholder" style="width:400px;height:300px"></div>
+</td>
+<td valign='top'>
+<form name='mainform'> <div class='labeled'>Beta:<span>Beta controls the rate of infection spreads, per contact between infected and non-infected, per unit time.</span></div> <input type='text' name='Alpha' id='alpha' size = 4 /><br/>
+<div class='labeled'>Gamma: <span>Gamma controls the rate infected individuals move into the recovered phase.</span></div><input type='text' name='Beta' size = 4 />
+<br/>
+<br/>
+Initial
+&nbsp&nbsp <table><tr><td>Susceptible:</td><td><input type="text" name="initialS" size = 4 /></td></tr>
+<tr><td> Infected: </td><td><input type="text" name="initialI" size = 4 /></td></tr>
+<tr><td> Recovered: </td><td><input type="text" name="initialR" size = 4 /></td></tr>
+</table>
+Days: <input type="text" name="iters" size = 6 /><br/>
+<input type="submit" value="Submit" onclick='setvals(this.form)'/>
+</form>
+</td>
+</tr>
+<tr><td>&nbsp</td><td><center>Time (days)</center></td><td>&nbsp</td></tr>
+</table>
+<p><b>Overview:</b><br/>
+The SIR models the flows of people between three states: susceptible (S), infected (I), and resistant (R).  Each of those variables represents the number of people in those groups.  The parameters alpha and beta partially control how fast people move from being susceptible to infected (alpha), and from infected to resistant (beta).</p>
+
+<p>The SIR model is used where individuals infect each other directly (rather than through a disease vector such as a mosquito).  An individual who recovers from the illness is also modeled to have perfect immunity to the disease thereafter.  Contact between people is also modeled to be random.</p>
+
+<p>The rate that people become infected is proportional to the number of people who are infected, and the number of people who are susceptible.  If there are lots of people infected, the chances of a susceptible coming into contact with someone who is infected is high.  Likewise, if there are very few people who are susceptible, the chances of a susceptible coming into contact with an infected is lower (since most of the contact would be between the non-susceptible people--either infected or resistant).</p>
+
+<p><b>Instructions:</b><br/>
+The boxes on the right side of the page control the parameters of the model.  The page should load with some parameters already in the box.  Click "submit" to run the model.  The parameters can all be modified and the model re-run.  The parameters are <br>
+<table cellpadding=8 border=0>
+<tr><td>Beta</td><td>The parameter controlling how often a susceptible-infected contact results in a new infection.</td></tr>
+<tr><td>Gamma</td><td>The rate an infected recovers and moves into the resistant phase.</td></tr>
+<tr><td>Initial susceptible</td><td>The number of susceptible individuals at the beginning of the model run.</td></tr>
+<tr><td>Initial infected</td><td>The number of infected individuals at the beginning of the model run.</td></tr>
+<tr><td>Initial recovered</td><td>The number of recovered individuals at the beginning of the model run.</td></tr>
+<tr><td>Iterations</td><td>Controls how long the model will run (each iteration is .01 units of time).</td></tr>
+</table>
+This program runs on your computer, so some computers may run faster than others.  It is probably a good idea not to set the number iterations or the initial populations too high, since it will take longer to run.  Note that cookies must be enabled for the algorithm to function.</p>
+
+<p><b>Details:</b><br/>
+This is an ordinary differential equation model, described by the following equation:<br/>
+<center>
+<img src="sireqn.png" alt="derivative of S with respect to t equals " />
+</center>
+The simulation uses the fourth-order Runge-Kutta algorithm to solve it numerically, with a step size fixed at 0.01, written in JavaScript. The plotting methods are from the <a href="http://code.google.com/p/flot/">flot module.</a>  Both the ode simulation and the script in this page calling it are new, so there may still be some unanticipated bugs (I am also fairly new to the language, so my code may be inefficient or bizarre in places).  Internet Explorer may have a different look than other browsers, since it has not yet adopted the <i>canvas</i> element, which is used in plotting.</p>
+
+</body>
+</html>
