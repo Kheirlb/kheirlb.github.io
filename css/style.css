@@ -1,0 +1,65 @@
+.project {
+    color: black;
+    padding: 10px;
+    background-color: white;
+    width: 100%;
+}
+
+/* Container holding the image and the text */
+.container {
+  position: relative;
+}
+
+/* Bottom right text */
+.text-block {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%; /* Full width */
+  background: rgba(0, 0, 0, 0.8); /* Black background with 0.5 opacity */
+  color: white;
+  padding-left: 5px;
+  padding-right: 50px;
+}
+
+header{
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.head{
+    float: left;
+    color: #00FF41;
+    font-family: verdana;
+    font-size: 100%;
+}
+
+nav{
+    float: right;
+}
+
+li{
+    display: inline;
+    padding: 1rem;
+}
+
+li a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 160%;
+}
+
+body {
+    background-color: #161616;
+    opacity: 1;
+}
+#cursor{
+    font-size: 30px;
+}
+span {
+    color: #00FF41;
+    font-family: courier;
+    font-size: 200%;
+}
