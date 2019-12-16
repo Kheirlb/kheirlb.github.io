@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <body onLoad="intro()">
+        <center>
+            <h1 id="line1"></h1>
+            <h1 id="line2"></h1>
+        </center>
+        <script>
+            var i = 0;
+            var txt1 = 'Hello.';
+            var txt2 = 'My Name is Karl.';
+            var speed = 50;
+            var delayLineTime = 500;
+            var typingComplete = false;
+            var timer = null;
+            var waitTime = 0;
+            var prevWord = txt1;
+
+            function intro() {
+                console.log("Running intro");
+                typeWriter(txt1, "line1");
+                //waitTime = waitTime + (txt1.length * speed);
+                startNextWriter(txt2, "line2");
+                //timeFunction(txt1);
+                //setTimeout(secondItem, (txt1.length * speed) + 750);
+                //typeWriter(txt2, "line2");
+            }
+            //(stringIn.length * speed) waitTime
+
+            function startNextWriter(stringIn, locIn) {
+                waitTime = waitTime + (stringIn.length * speed);
+                timer = setTimeout(function(){ typeWriter(stringIn, locIn); }, waitTime + delayLineTime);
+            }
+
+            function typeWriter(stringIn, lineIn) {
+                //waitTime = waitTime + (stringIn.length * speed);
+                if (i == stringIn.length) {
+                    console.log("Typing Complete");
+                    typingComplete = true;
+                }
+                if (i < stringIn.length) {
+                    //console.log("String Input: " + stringIn);
+                    //console.log("i: " + i);
+                    currentString = document.getElementById(lineIn).innerHTML;
+                    //console.log("Current String: " + currentString);
+                    document.getElementById(lineIn).innerHTML += stringIn.charAt(i);
+                    i++;
+                    timer = setTimeout(typeWriter, speed, stringIn, lineIn);
+                }
+                if (typingComplete == true) {
+                    console.log("Reset Conditions");
+                    i = 0;
+                    typingComplete = false;
+                    prevWord = stringIn;
+                }
+            }
+
+        </script>
+    </body>
+</html>

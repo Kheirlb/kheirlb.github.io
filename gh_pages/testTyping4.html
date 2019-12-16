@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+          #cursor{
+              font-size: 30px;
+          }
+        </style>
+    </head>
+    <body onLoad="intro()">
+        <center>
+        <p>
+            <span id="line1"></span><span id="cursor">|</span><br>
+            <span id="line2"></span>
+        </p>
+        </center>
+        <script>
+            var i = 0;
+            var txt1 = 'Hello!';
+            var txt2 = ' My name is Karl Parks.';
+            var speed = 75; //between each character
+            var defaultWordDelay = 1250;
+            var typingComplete = false;
+            var waitTime = 0;
+            var prevWord = 0;
+
+            var totalTimeBetweenLines = 0;
+
+            var timer = null;
+            var timer_is_on = 0;
+
+            var firstString = true;
+
+            var cursor = true;
+            var speedCursor = 400;
+            setInterval(() => {
+              if(cursor) {
+                document.getElementById('cursor').style.opacity = 0;
+                cursor = false;
+              }else {
+                document.getElementById('cursor').style.opacity = 1;
+                cursor = true;
+              }
+            }, speedCursor);
+
+            function intro() {
+                console.log("Running intro");
+                startWriter(txt1, txt2, "line1", "line1", 0); //first and second string
+                //addDelay(500);
+                clearText("line1");
+                writeAgain("Welcome to my website.", "line1");
+                writeAgain(" :)", "line1");
+                clearText("line1");
+                writeAgain("Let me share with you... ", "line1");
+                writeAgain("a little bit about me.", "line1");
+                clearText("line1");
+                writeAgain("I am a programmer.", "line1");
+                //delLast2Words("line1");
+            }
+
+            // function delLast2Words() {
+            //     var str = "I want to remove the last word.";
+            //     var lastIndex = str.lastIndexOf(" ");
+            //
+            //     str = str.substring(0, lastIndex);
+            // }
+
+            function delChar(numChars, lineIn) {
+                if (!firstString) {
+                    console.log("This is removing content...");
+                    setTimeout(function(){ typeWriterDel(numChars, lineIn); }, totalTimeBetweenLines);
+                    //prepare for next writeAgain or delChar
+                    totalTimeBetweenLines = ((numChars + 1) * speed) + totalTimeBetweenLines + defaultWordDelay;
+                }
+            }
+
+            function addDelay(sDelay) {
+                totalTimeBetweenLines += sDelay;
+            }
+
+            function clearText(lineIn) {
+                if (!firstString) {
+                    //writeAgain("", lineIn);
+                    setTimeout(function(){ document.getElementById(lineIn).innerHTML = ""; }, totalTimeBetweenLines);
+                    //totalTimeBetweenLines = ((stringIn.length + 1) * speed) + totalTimeBetweenLines;
+                }
+            }
+
+            function startWriter(stringIn, nextString, lineIn, nextLineIn, initialDelay) {
+                //only works for initialization
+                if (firstString) {
+                    console.log("This if the first string");
+                    typeWriter(stringIn, lineIn);
+                    firstString = false;
+                    totalTimeBetweenLines = ((stringIn.length + 1) * speed) + totalTimeBetweenLines + initialDelay + defaultWordDelay;
+                    setTimeout(function(){ typeWriter(nextString, nextLineIn); }, totalTimeBetweenLines);
+                    //prepare for  first writeAgain
+                    totalTimeBetweenLines = ((nextString.length + 1) * speed) + totalTimeBetweenLines + defaultWordDelay;
+                }
+            }
+
+            function writeAgain(stringIn, lineIn) {
+                //only works on adding more strings
+                if (!firstString) {
+                    console.log("This if the THIRD+ string");
+                    setTimeout(function(){ typeWriter(stringIn, lineIn); }, totalTimeBetweenLines);
+                    //prepare for next writeAgain
+                    totalTimeBetweenLines = ((stringIn.length + 1) * speed) + totalTimeBetweenLines + defaultWordDelay;
+                }
+            }
+
+            function typeWriter(stringIn, lineIn) {
+                //waitTime = waitTime + (stringIn.length * speed);
+                if (i == stringIn.length) {
+                    console.log("Typing Complete");
+                    typingComplete = true;
+                }
+                if (i < stringIn.length) {
+                    //console.log("String Input: " + stringIn);
+                    //console.log("i: " + i);
+                    currentString = document.getElementById(lineIn).innerHTML;
+                    //console.log("Current String: " + currentString);
+                    document.getElementById(lineIn).innerHTML += stringIn.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, speed, stringIn, lineIn);
+                }
+                if (typingComplete == true) {
+                    console.log("Reset Conditions");
+                    i = 0;
+                    typingComplete = false;
+                    prevWord = stringIn;
+                }
+            }
+
+            function typeWriterDel(numChars, lineIn) {
+                //waitTime = waitTime + (stringIn.length * speed);
+                if (i == numChars) {
+                    console.log("Typing Complete");
+                    typingComplete = true;
+                }
+                if (i < numChars) {
+                    //console.log("String Input: " + stringIn);
+                    //console.log("i: " + i);
+                    currentString = document.getElementById(lineIn).innerHTML;
+                    //console.log("Current String: " + currentString);
+                    newString = currentString.substring(0, currentString.length - 1);
+                    document.getElementById(lineIn).innerHTML = currentString;
+                    i++;
+                    setTimeout(typeWriter, speed, stringIn, lineIn);
+                }
+                if (typingComplete == true) {
+                    console.log("Reset Conditions");
+                    i = 0;
+                    typingComplete = false;
+                    prevWord = stringIn;
+                }
+            }
+
+        </script>
+    </body>
+</html>

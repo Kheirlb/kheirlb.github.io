@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <body onLoad="intro()">
+        <center>
+            <h1 id="line1"></h1>
+            <h1 id="line2"></h1>
+            <h1 id="line3"></h1>
+        </center>
+        <script>
+            var i = 0;
+            var txt1 = 'Hello. ';
+            var txt2 = 'My name is Karl Parks. ';
+            var txt3 = 'Hello Idiot. ';
+            var txt4 = 'Did you finally achieve victory? ';
+            var speed = 50;
+            var delayLineTime = 0;
+            var typingComplete = false;
+            var waitTime = 0;
+            var prevWord = 0;
+
+            var totalTimeBetweenLines = 0;
+
+            var timer = null;
+            var timer_is_on = 0;
+
+            var firstString = true;
+
+            function intro() {
+                console.log("Running intro");
+                startWriter(txt1, txt2, "line1"); //first and second string
+                startWriter(txt2, txt1, "line1"); //will not run! this is GOOD!
+                writeAgain(txt3, "line1");
+                addStringDelay(1000);
+                writeAgain(txt4, "line1");
+                addStringDelay(1000);
+                writeAgain("I THINK SO!!!!", "line2");
+                //startWriter(txt1, txt1, "line1");
+            }
+
+            function addStringDelay(sDelay) {
+                totalTimeBetweenLines += sDelay;
+            }
+
+            function startWriter(stringIn, nextString, lineIn) {
+                //only works for initialization
+                if (firstString) {
+                    console.log("This if the first string");
+                    typeWriter(stringIn, lineIn);
+                    firstString = false;
+                    totalTimeBetweenLines = ((stringIn.length + 1) * speed) + totalTimeBetweenLines;
+                    setTimeout(function(){ typeWriter(nextString, lineIn); }, totalTimeBetweenLines);
+                    //prepare for  first writeAgain
+                    totalTimeBetweenLines = ((nextString.length + 1) * speed) + totalTimeBetweenLines;
+                }
+            }
+
+            function writeAgain(stringIn, lineIn) {
+                //only works on adding more strings
+                if (!firstString) {
+                    console.log("This if the THIRD string");
+                    setTimeout(function(){ typeWriter(stringIn, lineIn); }, totalTimeBetweenLines);
+                    //prepare for next writeAgain
+                    totalTimeBetweenLines = ((stringIn.length + 1) * speed) + totalTimeBetweenLines;
+                }
+            }
+
+            function typeWriter(stringIn, lineIn) {
+                //waitTime = waitTime + (stringIn.length * speed);
+                if (i == stringIn.length) {
+                    console.log("Typing Complete");
+                    typingComplete = true;
+                }
+                if (i < stringIn.length) {
+                    //console.log("String Input: " + stringIn);
+                    //console.log("i: " + i);
+                    currentString = document.getElementById(lineIn).innerHTML;
+                    //console.log("Current String: " + currentString);
+                    document.getElementById(lineIn).innerHTML += stringIn.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, speed, stringIn, lineIn);
+                }
+                if (typingComplete == true) {
+                    console.log("Reset Conditions");
+                    i = 0;
+                    typingComplete = false;
+                    prevWord = stringIn;
+                }
+            }
+
+        </script>
+    </body>
+</html>
