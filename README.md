@@ -13,7 +13,7 @@ My name is Karl Parks and I love to robotics, engineering, science, space, and m
 ## Programming/Scripting Language Proficiency
 ![Screenshot](images/radar.JPG?raw=true)
 
-This is outdated. I hope to make another one that's interactive someday.
+This is outdated. I hope to make another one that's interactive based on the skills category shown.
 
 ## I'm in the news and on the web!
 
