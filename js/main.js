@@ -1,7 +1,6 @@
 const typeID = document.getElementById("typeSpot");
 
-var waitTime = 6000;
-
+//typer
 var typed = new Typed(typeID, {
   strings: ["",
             "^500Hello.",
@@ -12,6 +11,8 @@ var typed = new Typed(typeID, {
   backSpeed: 25,
 });
 
+//background delay
+var waitTime = 6000;
 setTimeout(function(){
     $('.jumbo2').css('background-image', 'url("/img/7K_karlLeaning2.jpeg")');
 }, waitTime)
