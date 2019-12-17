@@ -1,68 +1,192 @@
 <!doctype html>
-<html class="no-js" lang="">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-<head>
-  <meta charset="utf-8">
-  <title></title>
-  <meta name="description" content="">
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1">-->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <style>
+            body {
+                padding-top: 50px;
+                padding-bottom: 20px;
+            }
+        </style>
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
 
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory -->
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="./index.html">Karl Parks</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse navbar-right">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="./index.html"> Home</a> </li>
+                <li><a href="#mySkills"> Skills</a> </li>
+                <li><a href="#myPortfolio"> Portfolio</a> </li>
+                <li><a href="#myContact"> Contact</a> </li>
+            </ul>
+            <a type="button" class="btn btn-success navbar-btn navbar-right" href="/docs/Resume-Karl-Parks.pdf" target="_blank">Resume</a>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
 
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/style.css">
-
-  <meta name="theme-color" content="#fafafa">
-</head>
-
-<body onLoad="intro()">
-  <!--[if IE]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]-->
-
-  <!-- Add your site or application content here -->
-  <script src="js/vendor/modernizr-3.8.0.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/k-Type.js"></script>
-
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
-
-  <header id="nav-placeholder">
-  </header>
-  <script>
-  $(function(){
-    $("#nav-placeholder").load("nav.html");
-  });
-  </script>
-
-  <center>
-    <div class="container">
-        <img src="./img/karlLeaning2.jpg" alt="" style="width:100%;">
-        <div class="text-block">
-            <p >
-                <span>> </span><span id="line1"></span><span id="cursor">|</span><br>
-                <span id="line2"></span>
-            </p>
+    <div class="jumbotron jumbo2" id="top">
+        <div class="container">
+            <div class="text-block">
+                <span id="typeSpot"></span>
+            </div>
         </div>
     </div>
-    <div class="project">
-        <h1>My Projects</h1>
-        <br><br><br><br><br><br><br><br>
-        <p>To be Updated Soon</p>
-        <br><br><br><br><br><br><br><br>
-    </div>
-  </center>
-</body>
 
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <span class="anchor" id="mySkills"></span>
+      <div class="container">
+        <div class="row vertical-align">
+            <div class="col-md-7">
+                <h2>I build rockets, robots, & software.</h2>
+                <p>I am an Aerospace Engineer from California searching for a full-time position in the New England area. I specialize in Avionics and Control systems. </p>
+                <a type="button" class="btn btn-success btn-lg" href="#myContact">
+                    Get In Touch
+                </a>
+            </div>
+            <div class="col-md-5">
+                <img src="/img/lego.jpg" id="aboutPic" class="img-fluid img-responsive img-circle center-block">
+                </img>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <center>
+        <span class="anchor" id="myPortfolio"></span>
+        <h1 style="margin-bottom:10px;"> My Portfolio of Work </h1>
+        <hr>
+      </center>
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Lady Elizabeth</h2>
+          <h3>SDSU Rocket Project</h3>
+          <img src="/img/ladyKarlBlur.jpg" class="img-thumbnail" style="margin-bottom:10px;"></img>
+          <button type="button" class="btn btn-default btn-lg">
+              Learn more &raquo;
+          </button>
+        </div>
+        <div class="col-md-6">
+          <h2>FAR/MARS Static Hot Fires A & B</h2>
+          <h3>SDSU Rocket Project</h3>
+          <img src="/img/shfB.jpg" class="img-thumbnail" style="margin-bottom:10px;"></img>
+          <button type="button" class="btn btn-default btn-lg">
+              Learn more &raquo;
+          </button>
+        </div>
+        <div class="col-md-6">
+          <h2>Helium Pressurization System</h2>
+          <h3>SDSU Rocket Project</h3>
+          <img src="/img/hpb.jpg" class="img-thumbnail" style="margin-bottom:10px;"></img>
+          <button type="button" class="btn btn-default btn-lg">
+              Learn more &raquo;
+          </button>
+        </div>
+        <div class="col-md-6">
+          <h2>Composites</h2>
+          <h3>SDSU Rocket Project</h3>
+          <button type="button" class="btn btn-default btn-lg">
+              Learn more &raquo;
+          </button>
+        </div>
+        <div class="col-md-6">
+          <h2>Robotic Arm on Wheels</h2>
+          <h3>Personal Project</h3>
+          <button type="button" class="btn btn-default btn-lg">
+              Learn more &raquo;
+          </button>
+        </div>
+        <div class="col-md-6">
+          <h2>Craftsmanship Collection</h2>
+          <h3>Personal Project</h3>
+          <button type="button" class="btn btn-default btn-lg">
+              Learn more &raquo;
+          </button>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="container">
+        <!-- Example row of columns -->
+        <center>
+          <span class="anchor" id="myContact"></span>
+          <h1 style="margin-bottom:30px;"> Get In Touch </h1>
+        </center>
+        <div class="row">
+          <div class="col-md-4">
+            <center>
+              <h4><strong>Email:</strong>&nbsp;<a href="mailto:kheirlbparks@gmail.com">kheirlbparks@gmail.com</a></h4>
+            </center>
+          </div>
+          <div class="col-md-4">
+            <center>
+              <h4><strong>LinkedIn:</strong>&nbsp;<a href="https://www.linkedin.com/in/karlparks/"> My LinkedIn Profile</a></h4>
+            </center>
+          </div>
+          <div class="col-md-4">
+            <center>
+              <h4><strong>GitHub:</strong>&nbsp;<a href="https://github.com/Kheirlb"> My GitHub Profile</a></h4>
+            </center>
+          </div>
+        </div>
+        <center>
+            <h5 style="margin-top:40px;">Searching for opporunties near Providence Rhodle Island</h5>
+            <iframe style="margin-top:15px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47576.43503682461!2d-71.45619982170109!3d41.81694480062884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e444e0437e735d%3A0x69df7c4d48b3b627!2sProvidence%2C%20RI!5e0!3m2!1sen!2sus!4v1576571328846!5m2!1sen!2sus" width=90% height=600px frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+      </div>
+
+
+      <hr>
+
+      <footer>
+        <center>
+          <p>&copy; Karl Parks 2019</p>
+        </center>
+      </footer>
+    </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+        </script>
+    </body>
 </html>
