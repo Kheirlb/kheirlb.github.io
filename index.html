@@ -23,6 +23,7 @@
 
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -42,6 +43,7 @@
         <div id="navbar" class="navbar-collapse collapse navbar-right">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="./index.html"> Home</a> </li>
+                <li><a href="#myAbout"> About</a> </li>
                 <li><a href="#mySkills"> Skills</a> </li>
                 <li><a href="#myPortfolio"> Portfolio</a> </li>
                 <li><a href="#myContact"> Contact</a> </li>
@@ -54,24 +56,26 @@
     <div class="jumbotron jumbo2" id="top">
         <div class="container">
             <div class="text-block">
-                <span id="typeSpot"></span>
+                <span>> </span><span id="typeSpot"></span>
             </div>
         </div>
     </div>
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
-      <span class="anchor" id="mySkills"></span>
       <div class="container">
-        <div class="row vertical-align">
-            <div class="col-md-7">
-                <h2>I build rockets, robots, & software.</h2>
-                <p>I am an Aerospace Engineer from California searching for a full-time position in the New England area. I specialize in Avionics and Control systems. </p>
+        <span class="anchor" id="myAbout"></span>
+        <div class="row">
+            <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+                <h2><strong>I build rockets, robots, & programs.</strong></h2>
+                <br>
+                <p>I have been an Engineering Intern at Parabilis Space Technologies for over 1.5 years, working on new and innovative space solutions with an incredible team. I recently graduated from San Diego State University, completing my Bachellors of Science in Aerospace Engineering and a minor in Computer Science. I am now in pursuit of a full-time opportunity close to Providence, Rhode Island by May of 2020.</p>
+                <br>
                 <a type="button" class="btn btn-success btn-lg" href="#myContact">
                     Get In Touch
                 </a>
             </div>
-            <div class="col-md-5">
+            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                 <img src="/img/lego.jpg" id="aboutPic" class="img-fluid img-responsive img-circle center-block">
                 </img>
             </div>
@@ -80,17 +84,32 @@
     </div>
 
     <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <center>
+                    <span class="anchor" id="mySkills"></span>
+                    <h3>I specialize in Avionics and Control systems, with a diverse and practiced set of skills. </h3>
+                    <br>
+                    <div id="skillDiv" style="height:82vh;"></div>
+                    <br>
+                </center>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
       <!-- Example row of columns -->
       <center>
         <span class="anchor" id="myPortfolio"></span>
-        <h1 style="margin-bottom:10px;"> My Portfolio of Work </h1>
+        <h1 style="margin-bottom:10px;"> My Portfolio of Work</h1>
+        <h2> (Website in Development) </h2>
         <hr>
       </center>
       <div class="row">
         <div class="col-md-6">
           <h2>Lady Elizabeth</h2>
           <h3>SDSU Rocket Project</h3>
-          <img src="/img/ladyKarlBlur.jpg" class="img-thumbnail" style="margin-bottom:10px;"></img>
+          <img src="/img/lowres_ladyKarlBlur.jpg" class="img-thumbnail" style="margin-bottom:10px;"></img>
           <button type="button" class="btn btn-default btn-lg">
               Learn more &raquo;
           </button>
@@ -99,6 +118,13 @@
           <h2>FAR/MARS Static Hot Fires A & B</h2>
           <h3>SDSU Rocket Project</h3>
           <img src="/img/shfB.jpg" class="img-thumbnail" style="margin-bottom:10px;"></img>
+          <button type="button" class="btn btn-default btn-lg">
+              Learn more &raquo;
+          </button>
+        </div>
+        <div class="col-md-6">
+          <h2>Galactic Aztec Heavy</h2>
+          <h3>SDSU Rocket Project</h3>
           <button type="button" class="btn btn-default btn-lg">
               Learn more &raquo;
           </button>
