@@ -37,13 +37,13 @@ var mainParents = ["", center, center, center, center, center, center];
 
 pythonLink = "<a style='color: blue' href='https://github.com/Kheirlb/purethermal1-uvc-capture'>Python</a>"
 
-var languages = ["MATLAB", "Java", pythonLink, "C/C++", "LabView", "FORTRAN", "JavaScript", "Racket/Scheme", "Linux/Unix"];
+var languages = ["MATLAB", "Java", pythonLink, "C/C++", "LabView", "FORTRAN", "JavaScript", "Racket/Scheme", "Linux/Unix","Version Control"];
 var langParents = Array(languages.length).fill("Software");
 
 var cadPrograms = ["PTC Creo", "Solidworks", "Autodesk<br>Inventor", "Blender"];
 var cadParents = Array(cadPrograms.length).fill("CAD");
 
-var aerospaceBackground = ["Avionics","Composites", "Cryogenics", "High Pressure", "Propulsion"];
+var aerospaceBackground = ["Avionics", "Composites", "Cryogenics", "High Pressure", "Propulsion", "FEA", "PDM/PLM"];
 var aerospaceParents = Array(aerospaceBackground.length).fill("Aerospace");
 
 ikLink = "<a style='color: blue' href='https://github.com/Kheirlb/CS556/blob/master/report/workSpace1.png'>Inverse<br>Kinematics</a>"
@@ -60,6 +60,10 @@ var mainCategories = [center, "Software", "CAD", "Aerospace", "Robotics", "Leade
 var combinedLabels = mainCategories.concat(languages, cadPrograms, aerospaceBackground, robotics, leadership, electrical);
 var combinedParents = mainParents.concat(langParents, cadParents, aerospaceParents, robotParents, leadershipParents, electricalParents);
 
+//hover events:
+//https://plot.ly/javascript/hover-events/
+//https://community.plot.ly/t/how-to-customize-plotly-tooltip/332/24
+
 var data = [
 {
   "type": "sunburst",
@@ -68,7 +72,7 @@ var data = [
  // "values":  [65, 14, 12, 10, 2, 6, 6, 4, 4],
   "leaf": {"opacity": 0.7},
   "marker": {"line": {"width": 3}},
-  "branchvalues": 'total'
+  "branchvalues": 'total',
 }];
 
 var layout = {
