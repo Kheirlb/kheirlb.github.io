@@ -24,11 +24,11 @@ var typed = new Typed(typeID, {
   backSpeed: 25,
 });
 
-// //background delay
-// var waitTime = 1000;
-// setTimeout(function(){
-//     $('.jumbo2').css('background-image', 'url("/img/7K_karlLeaning2.jpeg")');
-// }, waitTime)
+//background delay
+var waitTime = 1000;
+setTimeout(function(){
+    $('.jumbo2').css('background-image', 'url("/img/7K_karlLeaning2.jpeg")');
+}, waitTime)
 
 //plotly
 var skillVar = document.getElementById('skillDiv');
