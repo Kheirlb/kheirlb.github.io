@@ -1,8 +1,14 @@
 //add navbar to pages
-
 $(function(){
   $("#nav-placeholder").load("/nav.html");
   $("#footer-placeholder").load("/footer.html");
+});
+
+// (".nav a").on("click",
+$(document).on('click', 'a', function() {
+  console.log('Hello World');
+  $(document).find("li.nav-item.active").removeClass("active");
+  $(this).parent().addClass("active");
 });
 
 const typeID = document.getElementById("typeSpot");

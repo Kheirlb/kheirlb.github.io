@@ -4,14 +4,31 @@
    Author's custom styles
    ========================================================================== */
 
+.img-fluid-2{
+ max-width: 130%;
+ height: auto;
+}
+
 .img-fluid {
  max-width: 80%;
  height: auto;
 }
 
+.checked {
+  color: orange;
+}
+
 .vertical-align {
     display: flex;
     align-items: center;
+}
+
+hr{
+  border-top: 1px solid #909090;
+}
+
+.jumbo-m{
+	background-color: white;
 }
 
 .jumbo2{
@@ -48,7 +65,7 @@
   top: 5px;
   right: 5px;
   background-color: black;
-  opacity: 0.75;
+  opacity: 0.9;
   color: white;
   padding-left: 30px;
   padding-top: 5px;
@@ -86,9 +103,13 @@ html {
   scroll-behavior: smooth;
 }
 
+#skillDiv {
+  height: 82vh;
+}
+
 .navbar a{
-    font-family: Verdana !important;
-    color: white !important;
+    /* font-family: Verdana !important; */
+    /* color: white !important; */
 }
 
 .btn-xlarge {
@@ -134,5 +155,11 @@ html {
         top: 30vh;
         width: 60%;
         font-size: 125%;
+    }
+    .text-block-projects h3 {
+      font-size: 100%;
+    }
+    #skillDiv {
+      height: 50vh;
     }
 }
