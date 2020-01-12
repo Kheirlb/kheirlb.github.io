@@ -22,8 +22,8 @@ const typeID = document.getElementById("typeSpot");
 //typer
 var typed = new Typed(typeID, {
   strings: ["",
-  "^500Hello.",
-  "My name is Karl Parks.",
+  "^500Hello.^250",
+  "My name is Karl Parks.^500",
   "Welcome to my website.^1500 :)",
             ],
   typeSpeed: 40,
