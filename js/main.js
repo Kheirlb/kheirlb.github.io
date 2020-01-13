@@ -38,18 +38,18 @@ setTimeout(function(){
 
 //plotly
 var skillVar = document.getElementById('skillDiv');
-var center = "This is me.";
+var center = "Select a<br>Category";
 var mainParents = ["", center, center, center, center, center, center];
 
 pythonLink = "<a style='color: blue' href='https://github.com/Kheirlb/purethermal1-uvc-capture'>Python</a>"
 
-var languages = ["MATLAB", "Java", pythonLink, "C/C++", "LabView", "FORTRAN", "JavaScript", "Racket/Scheme", "Linux/Unix","Version Control"];
+var languages = ["MATLAB", "Java", pythonLink, "C/C++", "LabView", "FORTRAN", "JavaScript", "Racket", "Linux/Unix","Version<br>Control"];
 var langParents = Array(languages.length).fill("Software");
 
-var cadPrograms = ["PTC Creo/Simulate", "Solidworks", "FEMAP/NASTRAN", "Autodesk<br>Inventor", "Blender"];
+var cadPrograms = ["PTC Creo<br>Simulate", "Solidworks", "FEMAP<br>NASTRAN", "Autodesk<br>Inventor", "Blender"];
 var cadParents = Array(cadPrograms.length).fill("CAD/FEA");
 
-var aerospaceBackground = ["Avionics", "Composites", "Cryogenics", "High Pressure", "Propulsion", "FEA", "PDM/PLM"];
+var aerospaceBackground = ["Avionics", "Composites", "Cryogenics", "High<br>Pressure", "Propulsion", "FEA", "PDM/PLM"];
 var aerospaceParents = Array(aerospaceBackground.length).fill("Aerospace");
 
 ikLink = "<a style='color: blue' href='https://github.com/Kheirlb/CS556/blob/master/report/workSpace1.png'>Inverse<br>Kinematics</a>"
@@ -59,7 +59,7 @@ var robotParents = Array(robotics.length).fill("Robotics");
 var leadership = ["<a style='color: blue' href='https://www.sdsurocketproject.org/our-team'>President<br>SDSURP</a>", "Senior<br>Engineer<br>SDSURP", "Design Lead<br>SDSURP", "VP of<br>Programming<br>CESC","Resident<br>Advisor","President<br>RHA"];
 var leadershipParents = Array(leadership.length).fill("Leadership");
 
-var electrical = ["Breadboards", "PCBs", "Soldering", "Multimeters", "Oscilloscopes", "Microohm Meters"];
+var electrical = ["Breadboards", "PCBs", "Soldering", "Multimeters", "Oscilloscopes", "Microohm<br>Meters"];
 var electricalParents = Array(electrical.length).fill("Electrical");
 
 var mainCategories = [center, "Software", "CAD/FEA", "Aerospace", "Robotics", "Leadership", "Electrical"];
