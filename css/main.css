@@ -57,11 +57,11 @@ hr{
 .jumbo2{
 	background-color: white;
 	background-size: cover;
-/*    background-image: url("/img/7K_karlLeaning2.jpeg"); */
-    color: white;
+  background-image: url("/img/7K_karlLeaning2_edited.jpg");
+  color: white;
 	background-repeat: no-repeat;
-    height: 100vh;
-    background-position: 50%;
+  height: 100vh;
+  background-position: 50%;
 }
 
 .jumbo3{
@@ -145,6 +145,12 @@ html {
             border-radius: 8px;
 }
 
+@media (min-width: 1400px) {
+  /* #hoverinfo {
+    margin-bottom: 20px;
+  } */
+}
+
 @media (min-width: 991px) and (max-width: 1400px) {
     .jumbo2 {
         background-position: 50%;
@@ -155,6 +161,9 @@ html {
         width: 50%;
         font-size: 175%;
     }
+    /* #hoverinfo {
+      margin-bottom: 20px;
+    } */
 }
 
 @media (min-width: 768px) and (max-width: 991px) {

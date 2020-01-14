@@ -6,7 +6,6 @@ $(function(){
 
 // (".nav a").on("click",
 $(document).on('click', 'a', function() {
-  console.log('Hello World');
   $(document).find("li.nav-item.active").removeClass("active");
   $(this).parent().addClass("active");
 });
@@ -31,10 +30,10 @@ var typed = new Typed(typeID, {
 });
 
 //background delay
-var waitTime = 1000;
-setTimeout(function(){
-    $('.jumbo2').css('background-image', 'url("/img/7K_karlLeaning2.jpeg")');
-}, waitTime)
+// var waitTime = 1000;
+// setTimeout(function(){
+//     $('.jumbo2').css('background-image', 'url("/img/7K_karlLeaning2_edited.jpg")');
+// }, waitTime)
 
 //plotly
 var skillVar = document.getElementById('skillDiv');
@@ -43,11 +42,11 @@ var mainParents = ["", center, center, center, center, center, center];
 
 pythonLink = "<a style='color: blue' href='https://github.com/Kheirlb/purethermal1-uvc-capture'>Python</a>"
 
-var languages = ["MATLAB", "Java", pythonLink, "C/C++", "LabView", "FORTRAN", "JavaScript", "Racket", "Linux/Unix","Version<br>Control"];
+var languages = ["MATLAB", "Java", pythonLink, "C/C++", "LabView", "FORTRAN", "JavaScript", "Racket", "Linux/Unix","Version Control"];
 var langParents = Array(languages.length).fill("Software");
 
 var cadPrograms = ["PTC Creo<br>Simulate", "Solidworks", "FEMAP<br>NASTRAN", "Autodesk<br>Inventor", "Blender"];
-var cadParents = Array(cadPrograms.length).fill("CAD/FEA");
+var cadParents = Array(cadPrograms.length).fill("CAD");
 
 var aerospaceBackground = ["Avionics", "Composites", "Cryogenics", "High<br>Pressure", "Propulsion", "FEA", "PDM/PLM"];
 var aerospaceParents = Array(aerospaceBackground.length).fill("Aerospace");
@@ -62,27 +61,129 @@ var leadershipParents = Array(leadership.length).fill("Leadership");
 var electrical = ["Breadboards", "PCBs", "Soldering", "Multimeters", "Oscilloscopes", "Microohm<br>Meters"];
 var electricalParents = Array(electrical.length).fill("Electrical");
 
-var mainCategories = [center, "Software", "CAD/FEA", "Aerospace", "Robotics", "Leadership", "Electrical"];
+var mainCategories = [center, "Software", "CAD", "Aerospace", "Robotics", "Leadership", "Electrical"];
 var combinedLabels = mainCategories.concat(languages, cadPrograms, aerospaceBackground, robotics, leadership, electrical);
 var combinedParents = mainParents.concat(langParents, cadParents, aerospaceParents, robotParents, leadershipParents, electricalParents);
+
+// //fix acronyms attempt
+// var combinedLabelsNoAcronyms = combinedLabels;
+// for (label in combinedLabels) {
+//   if (combinedLabels[label].includes("SDSURP")) {
+//     console.log(combinedLabels[label]);
+//     combinedLabelsNoAcronyms[label] = combinedLabelsNoAcronyms[label].replace("SDSURP","SDSU Rocket Project");
+//   } else if (combinedLabels[label].includes("RHA")) {
+//     console.log(combinedLabels[label]);
+//     combinedLabelsNoAcronyms[label] = combinedLabelsNoAcronyms[label].replace("RHA","Residence Hall Association");
+//   }
+// }
 
 //hover events:
 //https://plot.ly/javascript/hover-events/
 //https://community.plot.ly/t/how-to-customize-plotly-tooltip/332/24
 
-var data = [
-{
-  "type": "sunburst",
-  "labels": combinedLabels,
-  "parents": combinedParents,
- // "values":  [65, 14, 12, 10, 2, 6, 6, 4, 4],
-  "leaf": {"opacity": 0.7},
-  "marker": {"line": {"width": 3}},
-  "branchvalues": 'total',
-}];
+//imported version using a csv
+var data;
+Plotly.d3.csv('/docs/karl_plotly_data.csv', function(err, rows){
+  function unpack(rows, key) {
+    return rows.map(function(row) { return row[key]; });
+  };
+
+  function addBreaks(manyStrings) {
+    // console.log(manyStrings.length);
+    // stringNum = 6;
+    // numPerLine = 10;
+    // numOfWords = manyStrings[stringNum].split(' ').length;
+    // console.log("# Words:" + numOfWords);
+    // i = 0;
+    // for (i = 1; i <= Math.floor(numOfWords/numPerLine); i++) {
+    //   num = RegExp()
+    //   console.log(manyStrings[stringNum].replace(/((\w+\W+){10})/, '$1<br/>'));
+    // }
+    return manyStrings;
+  }
+
+  data = [
+      {
+        type: "sunburst",
+        labels: unpack(rows, 'labels'),
+        parents: unpack(rows, 'parents'),
+        // meta: unpack(rows, 'description'),
+        // hovertext: addBreaks(unpack(rows, 'description')),
+        // hovertemplate: "%{label}<extra>%{hovertext}</extra>",
+        leaf: {"opacity": 0.75},
+        marker: {"line": {"width": 3}},
+        insidetextorientation: 'radial',
+        branchvalues: 'total',
+      }
+  ];
+
+// var data = [
+// {
+//   type: "sunburst",
+//   labels: dataImported[0].labels, //combinedLabels
+//   parents: dataImported[0].parents, //combinedParents
+//   // "values":  [65, 14, 12, 10, 2, 6, 6, 4, 4],
+//   leaf: {"opacity": 0.75},
+//   marker: {"line": {"width": 3}},
+//   insidetextorientation: 'radial',
+//   branchvalues: 'total',
+//   // hovertext: ["This is a whoe bunch of useless text that you will never use in your life because this is just a test so ignore the test text if you get what I mean ya know fool? Like don't bother me when I'm testing this shit out okay? I feel like you are all up in my stuff here and I just don't like it okay."],
+//   // hovertemplate:
+//   //   "<b>%{label}</b><br><br>" +
+//   //   "<extra><b>Description:</b>%{hovertext}</extra>",
+//   showlegend: false,
+//   // meta: ["", "", "", "", "", "", "", "MATLAB is the only language taught in the SDSU Aerospace<br> Department and is widely used in several of our lab<br> courses. I am extremely proficient with the MATLAB language and<br> IDE and have developed code in my professional job."],
+//   // hovertemplate: "%{label}<extra>%{meta}</extra>",
+//   // "hoverlabel": {"align": "center"},
+// }];
 
 var layout = {
   "margin": {"l": 0, "r": 0, "b": 0, "t": 0},
 };
 
 Plotly.plot(skillVar, data, layout, {responsive: true})
+
+var hoverInfo = document.getElementById('hoverinfo');
+skillVar.on('plotly_hover', function(data){
+  var xaxis = data.points[0].xaxis,
+      yaxis = data.points[0].yaxis;
+
+  var infotext = data.points.map(function(d){
+    console.log("Hovering Over: " + d.label);
+    // hoverInfo.innerHTML = d.meta + "<br>";
+  });
+})
+.on('plotly_unhover', function(data){
+   // hoverInfo.innerHTML = '';
+});
+
+skillVar.on('plotly_click', function(data){
+  var xaxis = data.points[0].xaxis,
+      yaxis = data.points[0].yaxis;
+  var infotext = data.points.map(function(d){
+    console.log('Clicked: ' + d.label);
+    if (combinedParents.indexOf(d.label) > -1) {
+      changePlotLabel(d.label);
+    } else {
+      if (hoverInfo.innerHTML === undefined) {
+        (hoverInfo.innerHTML) = d.meta;
+        window.location = (""+window.location).replace(/#[A-Za-z0-9_]*$/,'')+"#mySkills";
+      }
+    }
+  });
+});
+
+var prevParent = "";
+
+function changePlotLabel(clickedLabel){
+  if (clickedLabel != prevParent) {
+    data[0].insidetextorientation = 'horizontal';
+    prevParent = clickedLabel;
+  }
+  else {
+    data[0].insidetextorientation = 'radial';
+    prevParent = "";
+  }
+};
+
+});
