@@ -1,45 +1,52 @@
-parents,labels,description
-Select a<br>Category,Software,
-Select a<br>Category,CAD,
-Select a<br>Category,Aerospace,
-Select a<br>Category,Robotics,
-Select a<br>Category,Leadership,
-Select a<br>Category,Electrical,
-Software,MATLAB,MATLAB is the only language taught in the SDSU Aerospace Department and is widely used in several of our lab courses. I am extremely proficient with the MATLAB language and IDE and have developed code in my professional job.
-Software,Java,Java is the first language I learned and I loved it. I took 3 semester courses with the SDSU Computer Science department that used Java as the primary language. The most impressive work I've done in Java was in my Data Structures course where I implemented product inventory database that used hashes and quicksort.
-Software,Python,<a style='color: blue' href='https://github.com/Kheirlb/purethermal1-uvc-capture'>Python</a>
-Software,C/C++,
-Software,LabView,
-Software,FORTRAN,
-Software,JavaScript,
-Software,Racket,
-Software,Linux/Unix,"Started out with Raspbian and eventually became exposed to Ubuntu, Fedora, RedHat, and more. I know my ways around the linux terminal really well."
-Software,Version Control,Significant experience with Git/SVN
-CAD,PTC Creo Simulate,Most professional experience I have with CAD is with PTC Creo and Simulate. Have managed professional drawings and large complex assemblies on critical time schedules.
-CAD,Solidworks,
-CAD,FEMAP NASTRAN,
-CAD,Autodesk Inventor,
-CAD,Blender,A 3D Animation and Visual Effects software that I keep around as a hobby. My older brother introduced it to me 7 years ago and he ended up turning it into a professional career.
-Aerospace,Avionics,
-Aerospace,Composites,
-Aerospace,Cryogenics,I have significant experience working with Liquid Oxygen and Liquid Nitrogen and have been the Red Team operator filling the rocket for SDSU Rocket Project at several static hot fires.
-Aerospace,High Pressure,"I have developed and operated high pressure helium and nitrogen systems, some up to 6000 psi, in several aerospace applications."
-Aerospace,Propulsion,
-Aerospace,FEA,
-Aerospace,PDM/PLM,
-Robotics,Jacobians,
-Robotics,Genetic Algorithms,
-Robotics,PID Controllers,
-Robotics,Inverse Kinematics,<a style='color: blue' href='https://github.com/Kheirlb/CS556/blob/master/report/workSpace1.png'>Inverse<br>Kinematics</a>
-Leadership,President SDSU<br> Rocket Project,<a style='color: blue' href='https://www.sdsurocketproject.org/our-team'>President<br>SDSURP</a>
-Leadership,Senior Engineer SDSU<br> Rocket Project,
-Leadership,Design Lead SDSU<br>Rocket Project,
-Leadership,VP of Programming<br> College of Engineering<br> Student Council,
-Leadership,Resident Advisor,"I help the SDSU residence halls stay safe and secure, meet with students who have university judicial problems, build an academic environment, and create many hall activities and programs."
-Leadership,President Residence<br> Hall Association,My first major leadership position at SDSU. I oversaw a team of 25 people who were responsible of being the student connection between the students living in the residence halls and those in the SDSU administration. I attend 2 regional conferences and 1 national as part of my tenure as President.
-Electrical,Breadboards,Actively used breadboards for the past 4 years on various electronics projects. I definitely know what a cheap one is and how annoying the can be.
-Electrical,PCBs,I designed a PCB in Eagle CAD several years ago but struggled to find a supplier to print the board. Most of my most recent experience is testing PCBs used by the SDSU Rocket Project team that run FreeRTOS.
-Electrical,Soldering,"I've been hobby soldering for about 4 years, working on various personal robotics projects, SDSU Rocket Project Avionics systems, and voltage dividers at Parabilis Space Technologies."
-Electrical,Multimeters,"I have been using multimeters my entire life from measuring the resistance on PCBs, checking continuity through cables, to checking my double AA batteries. I am at least experienced enough to know how to measure current without popping the fuse (not really that hard)."
-Electrical,Oscilloscopes,Used to measure PWM waves for controlling servos and difference in voltage draw of an R&D igniter.
-Electrical,Microohm Meters,Measured resistance of various porous graphite samples for an R&D project.
+parents,labels,short,old_description
+,Select a<br>Category,,
+Select a<br>Category,Software,,
+Select a<br>Category,CAD,,
+Select a<br>Category,Aerospace,,
+Select a<br>Category,Robotics,,
+Select a<br>Category,Leadership,,
+Select a<br>Category,Electrical,,
+Select a<br>Category,Practical,,
+Software,MATLAB/Octave,My most proficient language used heavily,MATLAB is the only language taught in the SDSU Aerospace Department and is widely used in several of our lab courses. I am extremely proficient with the MATLAB language and IDE and have developed code in my professional job.
+Software,Java,My favorite language taught for 3 semesters at SDSU,Java is the first language I learned and I loved it. I took 3 semester courses with the SDSU Computer Science department that used Java as the primary language. The most impressive work I've done in Java was in my Data Structures course where I implemented product inventory database that used hashes and quicksort.
+Software,Python,Developed several GUIs and Server/Client applications,<a style='color: blue' href='https://github.com/Kheirlb/purethermal1-uvc-capture'>Python</a>
+Software,C/C++,"Completed several professional projects using C, used C++ in a classroom setting",
+Software,LabView,I frequently use at Parabilis Space Technologies,
+Software,FORTRAN,Only a few scripts in FORTRAN 95 in classroom setting,
+Software,JavaScript,I used Javascript to make this website that you are on now,
+Software,Racket,A functional language that I used in classroom setting,
+Software,Linux/Unix,Extremely comfortable with Raspbian & Ubuntu,"Started out with Raspbian and eventually became exposed to Ubuntu, Fedora, RedHat, and more. I know my ways around the linux terminal really well."
+Software,Version Control,Use Git for GitHub and TortoiseSVN at work,Significant experience with Git/SVN
+CAD,PTC Creo/Simulate,"Professional experience with parts, drawings, & assemblies",Most professional experience I have with CAD is with PTC Creo and Simulate. Have managed professional drawings and large complex assemblies on critical time schedules.
+CAD,Solidworks,Frequently used as Design Lead with the SDSU Rocket Project,
+CAD,FEMAP/NASTRAN,Used in academic setting for dynamic modal analysis,
+CAD,Autodesk<br>Inventor,Used for education with my family for 3D printing,
+CAD,Blender,"A hobby for mesh modeling, animation, and vfx",A 3D Animation and Visual Effects software that I keep around as a hobby. My older brother introduced it to me 7 years ago and he ended up turning it into a professional career.
+Aerospace,Avionics,Strong background developing data acquisition and control systems,
+Aerospace,Composites,Can perform wet and dry layups for aerospace applications,
+Aerospace,Cryogenics,"Hands on experience designing for and using LOX, LNG, and LN2",I have significant experience working with Liquid Oxygen and Liquid Nitrogen and have been the Red Team operator filling the rocket for SDSU Rocket Project at several static hot fires.
+Aerospace,High Pressure,Designed and operated high pressure helium and nitrogen systems,"I have developed and operated high pressure helium and nitrogen systems, some up to 6000 psi, in several aerospace applications."
+Aerospace,Propulsion,Strong background in liquid bi-propellant and hybrid technologies,
+Aerospace,FEA,Experience with Finite Element Analysis using Simulate and NASTRAN,
+Aerospace,PDM/PLM,Managed configuration control with Windchill/GrabCAD,
+Robotics,Jacobians,Used in academic setting and can find/avoid singularities,
+Robotics,Genetic Algorithms,"Exposure to topic involving selection, operators, and fitness evalulation",
+Robotics,PID Controllers,Strong exposure and practice developing and using PID controllers ,
+Robotics,Inverse Kinematics,Developed custom IK code using the decomposition and approximation method,<a style='color: blue' href='https://github.com/Kheirlb/CS556/blob/master/report/workSpace1.png'>Inverse<br>Kinematics</a>
+Leadership,President SDSU<br>Rocket Project,Project Manager for liquid bi-propellant rocket student team,<a style='color: blue' href='https://www.sdsurocketproject.org/our-team'>President<br>SDSURP</a>
+Leadership,Senior Engineer SDSU<br>Rocket Project,Advised and taught new members various aerospace skills,
+Leadership,Design Lead SDSU<br>Rocket Project,"Designed several propulsion, fluid, and avionics systems",
+Leadership,VP of Programming<br>College of Engineering<br> Student Council,Introduced new social engineering events at SDSU,
+Leadership,Resident Advisor,Kept the SDSU residents safe and mentored through freshman year,"I help the SDSU residence halls stay safe and secure, meet with students who have university judicial problems, build an academic environment, and create many hall activities and programs."
+Leadership,President Residence<br>Hall Association,Managed team responsible for representing 4000 on-campus students,My first major leadership position at SDSU. I oversaw a team of 25 people who were responsible of being the student connection between the students living in the residence halls and those in the SDSU administration. I attend 2 regional conferences and 1 national as part of my tenure as President.
+Electrical,Arduinos<br>Raspberry Pis,Use them in personal and professional settings frequently,
+Electrical,Breadboards,Actively used for various prototyping projects for 4 years,Actively used breadboards for the past 4 years on various electronics projects. I definitely know what a cheap one is and how annoying the can be.
+Electrical,PCBs,EagleCAD exposure and FreeRTOS exposure,I designed a PCB in Eagle CAD several years ago but struggled to find a supplier to print the board. Most of my most recent experience is testing PCBs used by the SDSU Rocket Project team that run FreeRTOS.
+Electrical,Soldering,Hobby and professional soldering for 4 years,"I've been hobby soldering for about 4 years, working on various personal robotics projects, SDSU Rocket Project Avionics systems, and voltage dividers at Parabilis Space Technologies."
+Electrical,Multimeters,"Been using my entire life to check voltage, resistance, and amperage","I have been using multimeters my entire life from measuring the resistance on PCBs, checking continuity through cables, to checking my double AA batteries. I am at least experienced enough to know how to measure current without popping the fuse (not really that hard)."
+Electrical,Oscilloscopes,Used in measure PWM waves and raw voltage of R&D igniter,Used to measure PWM waves for controlling servos and difference in voltage draw of an R&D igniter.
+Electrical,Microohm Meters,Measure resistance of various graphite for R&D project,Measured resistance of various porous graphite samples for an R&D project.
+Practical,Power Tools,Been using power/hand tools my entire life with an expanding collection of my own,
+Practical,Welding,"Proficient at MIG, ARC, and Gas welding with exposure to TIG",
+Practical,Microsoft Excel,"Skilled at Microsoft Excel using Pivot Tables, VLOOKUP, and macros",
+Practical,Website Design,Made this website with HTML/CSS/Javascript but also know Wix and Wordpress,

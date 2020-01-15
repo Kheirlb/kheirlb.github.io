@@ -128,6 +128,7 @@ html {
 
 #skillDiv {
   height: 82vh;
+  margin-bottom: 30px;
 }
 
 .navbar a{
@@ -164,6 +165,9 @@ html {
     /* #hoverinfo {
       margin-bottom: 20px;
     } */
+    #skillDiv {
+      height: 65vh;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -175,6 +179,9 @@ html {
         top: 30vh;
         width: 50%;
         font-size: 150%;
+    }
+    #skillDiv {
+      height: 45vh;
     }
 }
 
@@ -192,6 +199,6 @@ html {
       font-size: 100%;
     }
     #skillDiv {
-      height: 50vh;
+      height: 40vh;
     }
 }

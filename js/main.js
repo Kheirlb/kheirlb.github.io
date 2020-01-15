@@ -22,8 +22,8 @@ const typeID = document.getElementById("typeSpot");
 var typed = new Typed(typeID, {
   strings: ["",
   "^500Hello.^250",
-  "My name is Karl Parks.^500",
-  "Welcome to my website.^1500 :)",
+  "My name is Karl Parks.^250",
+  "Welcome to my website.^1250 :)",
             ],
   typeSpeed: 40,
   backSpeed: 25,
@@ -37,33 +37,35 @@ var typed = new Typed(typeID, {
 
 //plotly
 var skillVar = document.getElementById('skillDiv');
-var center = "Select a<br>Category";
-var mainParents = ["", center, center, center, center, center, center];
 
-pythonLink = "<a style='color: blue' href='https://github.com/Kheirlb/purethermal1-uvc-capture'>Python</a>"
-
-var languages = ["MATLAB", "Java", pythonLink, "C/C++", "LabView", "FORTRAN", "JavaScript", "Racket", "Linux/Unix","Version Control"];
-var langParents = Array(languages.length).fill("Software");
-
-var cadPrograms = ["PTC Creo<br>Simulate", "Solidworks", "FEMAP<br>NASTRAN", "Autodesk<br>Inventor", "Blender"];
-var cadParents = Array(cadPrograms.length).fill("CAD");
-
-var aerospaceBackground = ["Avionics", "Composites", "Cryogenics", "High<br>Pressure", "Propulsion", "FEA", "PDM/PLM"];
-var aerospaceParents = Array(aerospaceBackground.length).fill("Aerospace");
-
-ikLink = "<a style='color: blue' href='https://github.com/Kheirlb/CS556/blob/master/report/workSpace1.png'>Inverse<br>Kinematics</a>"
-var robotics = ["Jacobians", "Genetic<br>Algorithms", "PID<br>Controllers", ikLink];
-var robotParents = Array(robotics.length).fill("Robotics");
-
-var leadership = ["<a style='color: blue' href='https://www.sdsurocketproject.org/our-team'>President<br>SDSURP</a>", "Senior<br>Engineer<br>SDSURP", "Design Lead<br>SDSURP", "VP of<br>Programming<br>CESC","Resident<br>Advisor","President<br>RHA"];
-var leadershipParents = Array(leadership.length).fill("Leadership");
-
-var electrical = ["Breadboards", "PCBs", "Soldering", "Multimeters", "Oscilloscopes", "Microohm<br>Meters"];
-var electricalParents = Array(electrical.length).fill("Electrical");
-
-var mainCategories = [center, "Software", "CAD", "Aerospace", "Robotics", "Leadership", "Electrical"];
-var combinedLabels = mainCategories.concat(languages, cadPrograms, aerospaceBackground, robotics, leadership, electrical);
-var combinedParents = mainParents.concat(langParents, cadParents, aerospaceParents, robotParents, leadershipParents, electricalParents);
+//old plotly data
+// var center = "Select a<br>Category";
+// var mainParents = ["", center, center, center, center, center, center];
+//
+// pythonLink = "<a style='color: blue' href='https://github.com/Kheirlb/purethermal1-uvc-capture'>Python</a>"
+//
+// var languages = ["MATLAB", "Java", pythonLink, "C/C++", "LabView", "FORTRAN", "JavaScript", "Racket", "Linux/Unix","Version Control"];
+// var langParents = Array(languages.length).fill("Software");
+//
+// var cadPrograms = ["PTC Creo<br>Simulate", "Solidworks", "FEMAP<br>NASTRAN", "Autodesk<br>Inventor", "Blender"];
+// var cadParents = Array(cadPrograms.length).fill("CAD");
+//
+// var aerospaceBackground = ["Avionics", "Composites", "Cryogenics", "High<br>Pressure", "Propulsion", "FEA", "PDM/PLM"];
+// var aerospaceParents = Array(aerospaceBackground.length).fill("Aerospace");
+//
+// ikLink = "<a style='color: blue' href='https://github.com/Kheirlb/CS556/blob/master/report/workSpace1.png'>Inverse<br>Kinematics</a>"
+// var robotics = ["Jacobians", "Genetic<br>Algorithms", "PID<br>Controllers", ikLink];
+// var robotParents = Array(robotics.length).fill("Robotics");
+//
+// var leadership = ["<a style='color: blue' href='https://www.sdsurocketproject.org/our-team'>President<br>SDSURP</a>", "Senior<br>Engineer<br>SDSURP", "Design Lead<br>SDSURP", "VP of<br>Programming<br>CESC","Resident<br>Advisor","President<br>RHA"];
+// var leadershipParents = Array(leadership.length).fill("Leadership");
+//
+// var electrical = ["Breadboards", "PCBs", "Soldering", "Multimeters", "Oscilloscopes", "Microohm<br>Meters"];
+// var electricalParents = Array(electrical.length).fill("Electrical");
+//
+// var mainCategories = [center, "Software", "CAD", "Aerospace", "Robotics", "Leadership", "Electrical"];
+// var combinedLabels = mainCategories.concat(languages, cadPrograms, aerospaceBackground, robotics, leadership, electrical);
+// var combinedParents = mainParents.concat(langParents, cadParents, aerospaceParents, robotParents, leadershipParents, electricalParents);
 
 // //fix acronyms attempt
 // var combinedLabelsNoAcronyms = combinedLabels;
@@ -83,22 +85,29 @@ var combinedParents = mainParents.concat(langParents, cadParents, aerospaceParen
 
 //imported version using a csv
 var data;
+var allParents;
 Plotly.d3.csv('/docs/karl_plotly_data.csv', function(err, rows){
   function unpack(rows, key) {
     return rows.map(function(row) { return row[key]; });
   };
 
   function addBreaks(manyStrings) {
+    //test code
     // console.log(manyStrings.length);
-    // stringNum = 6;
-    // numPerLine = 10;
+    // stringNum = 8;
     // numOfWords = manyStrings[stringNum].split(' ').length;
     // console.log("# Words:" + numOfWords);
-    // i = 0;
-    // for (i = 1; i <= Math.floor(numOfWords/numPerLine); i++) {
-    //   num = RegExp()
-    //   console.log(manyStrings[stringNum].replace(/((\w+\W+){10})/, '$1<br/>'));
-    // }
+    // console.log(manyStrings[stringNum].replace(/((\w+\W+){5})/, '$1<br/>'));
+
+    //looping and resave
+    var skipWords = 4;
+    var re = new RegExp('((\\w+\\W+){' + skipWords +'})','g');
+    var i;
+    for (i = 0; i < manyStrings.length; i++) {
+      //console.log(manyStrings[i].replace(re, '$1<br>'));
+      manyStrings[i] = manyStrings[i].replace(re, '$1<br>');
+    }
+
     return manyStrings;
   }
 
@@ -106,14 +115,17 @@ Plotly.d3.csv('/docs/karl_plotly_data.csv', function(err, rows){
       {
         type: "sunburst",
         labels: unpack(rows, 'labels'),
-        parents: unpack(rows, 'parents'),
-        // meta: unpack(rows, 'description'),
-        // hovertext: addBreaks(unpack(rows, 'description')),
-        // hovertemplate: "%{label}<extra>%{hovertext}</extra>",
+        parents: (allParents = unpack(rows, 'parents')),
+        textfont: {"color": "black"},
+        insidetextfont: {"color": "white"},
+        // meta: unpack(rows, 'short'),
+        hovertext: addBreaks(unpack(rows, 'short')),
+        hovertemplate: "%{label}<extra>%{hovertext}</extra>",
         leaf: {"opacity": 0.75},
         marker: {"line": {"width": 3}},
         insidetextorientation: 'radial',
         branchvalues: 'total',
+        hoverlabel: {"align": "left"},
       }
   ];
 
@@ -162,7 +174,7 @@ skillVar.on('plotly_click', function(data){
       yaxis = data.points[0].yaxis;
   var infotext = data.points.map(function(d){
     console.log('Clicked: ' + d.label);
-    if (combinedParents.indexOf(d.label) > -1) {
+    if (allParents.indexOf(d.label) > -1) {
       changePlotLabel(d.label);
     } else {
       if (hoverInfo.innerHTML === undefined) {
