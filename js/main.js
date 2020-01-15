@@ -11,7 +11,6 @@ $(document).on('click', 'a', function() {
 });
 
 const typeID = document.getElementById("typeSpot");
-
 // "^500Hello.",
 // "My name is Karl Parks.",
 // "Welcome to my website.^1500 :)",
@@ -155,20 +154,22 @@ var layout = {
 
 Plotly.plot(skillVar, data, layout, {responsive: true})
 
-var hoverInfo = document.getElementById('hoverinfo');
-skillVar.on('plotly_hover', function(data){
-  var xaxis = data.points[0].xaxis,
-      yaxis = data.points[0].yaxis;
+//Hover interaction
+// var hoverInfo = document.getElementById('hoverinfo');
+// skillVar.on('plotly_hover', function(data){
+//   var xaxis = data.points[0].xaxis,
+//       yaxis = data.points[0].yaxis;
+//
+//   var infotext = data.points.map(function(d){
+//     console.log("Hovering Over: " + d.label);
+//     // hoverInfo.innerHTML = d.meta + "<br>";
+//   });
+// })
+// .on('plotly_unhover', function(data){
+//    // hoverInfo.innerHTML = '';
+// });
 
-  var infotext = data.points.map(function(d){
-    console.log("Hovering Over: " + d.label);
-    // hoverInfo.innerHTML = d.meta + "<br>";
-  });
-})
-.on('plotly_unhover', function(data){
-   // hoverInfo.innerHTML = '';
-});
-
+//Click interaction
 skillVar.on('plotly_click', function(data){
   var xaxis = data.points[0].xaxis,
       yaxis = data.points[0].yaxis;
@@ -176,23 +177,23 @@ skillVar.on('plotly_click', function(data){
     console.log('Clicked: ' + d.label);
     if (allParents.indexOf(d.label) > -1) {
       changePlotLabel(d.label);
-    } else {
-      if (hoverInfo.innerHTML === undefined) {
-        (hoverInfo.innerHTML) = d.meta;
-        window.location = (""+window.location).replace(/#[A-Za-z0-9_]*$/,'')+"#mySkills";
-      }
     }
+    // else {
+    //   if (hoverInfo.innerHTML === undefined) {
+    //     (hoverInfo.innerHTML) = d.meta;
+    //     window.location = (""+window.location).replace(/#[A-Za-z0-9_]*$/,'')+"#mySkills";
+    //   }
+    // }
   });
 });
 
 var prevParent = "";
-
 function changePlotLabel(clickedLabel){
   if (clickedLabel != prevParent) {
     data[0].insidetextorientation = 'horizontal';
     prevParent = clickedLabel;
   }
-  else {
+  else { //need to fix if user clicks to many times
     data[0].insidetextorientation = 'radial';
     prevParent = "";
   }

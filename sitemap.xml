@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://karlparks.com/</loc>
+  <lastmod>2020-01-15T01:42:51+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://karlparks.com/projects/le.html</loc>
+  <lastmod>2020-01-15T01:42:52+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://karlparks.com/projects/shfAB.html</loc>
+  <lastmod>2020-01-15T01:42:52+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://karlparks.com/projects/gah.html</loc>
+  <lastmod>2020-01-15T01:42:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://karlparks.com/projects/hpb.html</loc>
+  <lastmod>2020-01-15T01:42:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://karlparks.com/projects/composites.html</loc>
+  <lastmod>2020-01-15T01:42:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://karlparks.com/projects/raw.html</loc>
+  <lastmod>2020-01-15T01:42:52+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://karlparks.com/projects/craft.html</loc>
+  <lastmod>2020-01-15T01:42:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://karlparks.com/docs/Resume-Karl-Parks.pdf</loc>
+  <lastmod>2020-01-15T01:42:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
+</urlset>
