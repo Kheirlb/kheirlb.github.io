@@ -166,7 +166,7 @@ html {
       margin-bottom: 20px;
     } */
     #skillDiv {
-      height: 65vh;
+      height: 70vh;
     }
 }
 
@@ -181,7 +181,7 @@ html {
         font-size: 150%;
     }
     #skillDiv {
-      height: 45vh;
+      height: 65vh;
     }
 }
 
@@ -199,6 +199,6 @@ html {
       font-size: 100%;
     }
     #skillDiv {
-      height: 40vh;
+      height: 45vh;
     }
 }
