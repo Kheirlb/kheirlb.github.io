@@ -152,7 +152,7 @@ var layout = {
   "margin": {"l": 0, "r": 0, "b": 0, "t": 0},
 };
 
-Plotly.plot(skillVar, data, layout, {responsive: true})
+Plotly.plot(skillVar, data, layout, {responsive: true, displayModeBar: false})
 
 //Hover interaction
 // var hoverInfo = document.getElementById('hoverinfo');
