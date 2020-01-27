@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- <link rel="stylesheet" href="../css/stylesPlotly.css"> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js"></script>
+
+    <title>Plot Sync - Data Analyzer</title>
+    <meta name="title" content="Plot Sync - A Data Analyzer from KSpace">
+    <meta name="description" content="Plot Sync is a data analyzer that easily permits syncing data from a variety of different sources, samples rates, and start times right in your web browser. Post processing data aquisition has never been so easy.">
+
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> -->
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3">
+          <h1>Plot Sync</h1>
+          <p>Use the button below to select the local csv data file you would like to plot.<br><br>Keep in mind:</p>
+          <ul>
+              <li>All data must be integers or floats.</li>
+              <li>Currently the header will be ignored until I figure out how to edit the axis/title/legend and shit.</li>
+              <li>First column of the csv is the x axis. </li>
+              <li>All remaining columns are various traces on the y axis.</li>
+          </ul>
+          <input type="file" name="File Upload" id="txtFileUpload" accept=".csv" />
+          <br>
+          <!-- <br>
+          Title:<br>
+          <input type="text" id="inTitle"><br>
+          Y-Axis Title:<br>
+          <input type="text" id="inYTitle"><br>
+          X-Axis Title:<br>
+          <input type="text" id="inXTitle"><br> -->
+
+          <p>A decent example csv file is included in <a href="data/PcJS4.csv">the data folder</a> of the repo.</p>
+
+          <p>Karl's Remarks: It finally kinda works!!! Javascript is hard.</p>
+        </div>
+        <div class="col-md-5">
+          <h1>Data</h1>
+          <div id="graph"></div>
+        </div>
+        <div class="col-md-4">
+          <h1>Video</h1>
+          <video id="video-player" width="95%" height="60%" controls>
+            <source src="video/count10.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+          </video>
+          <div>
+            <span>Video Playback Rate: </span><span id="vidRateVal"><span>
+          </div>
+          <div>
+            <input id="vidRateSlider" type="range" min="0" max="5" value="1" step="0.1" class="slider" id="myRange">
+          </div>
+          <div>
+            <span>Time in Video: </span><span id="demo">0<span>
+          </div>
+          <div>
+            Start Clip: <input type="text" id="startClip"/><br />
+            End Clip: <input type="text" id="endClip"/><br />
+            <button onclick="changeClipping()">Change Clipping</button>
+          </div>
+        </div>
+      </div>
+    </div>
+      <script src="plot-sync.js"></script>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+      <script>window.jQuery || document.write('<script src="../../js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+      <script src="../../js/vendor/bootstrap.min.js"></script>
+  </body>
+</html>
