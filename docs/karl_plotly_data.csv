@@ -7,15 +7,17 @@ Select a<br>Category,Robotics,,
 Select a<br>Category,Leadership,,
 Select a<br>Category,Electrical,,
 Select a<br>Category,Practical,,
-Software,Python,Proficient - Boston Dynamics,<a style='color: blue' href='https://github.com/Kheirlb/purethermal1-uvc-capture'>Python</a>
-Software,C/C++,Proficient - Parabilis Boston Dynamics,
-Software,Kotlin/Java,Proficient - Boston Dynamics,Java is the first language I learned and I loved it. I took 3 semester courses with the SDSU Computer Science department that used Java as the primary language. The most impressive work I've done in Java was in my Data Structures course where I implemented product inventory database that used hashes and quicksort.
-Software,Typescript/JavaScript,Proficient - Boston Dynamics,
-Software,MATLAB/Octave,Proficient - Parabilis and SDSU,MATLAB is the only language taught in the SDSU Aerospace Department and is widely used in several of lab courses. I am extremely proficient with the MATLAB language and IDE and have developed code in professional roles.
-Software,LabView,Used at Parabilis Space Technologies,
-Software,Linux/Unix,Proficient - Extremely comfortable with Ubuntu,"Started out with Raspbian and eventually became exposed to Ubuntu, Fedora, RedHat, and more. I know my ways around the linux terminal really well."
+Software,MATLAB/Octave,My most proficient language used heavily,MATLAB is the only language taught in the SDSU Aerospace Department and is widely used in several of our lab courses. I am extremely proficient with the MATLAB language and IDE and have developed code in my professional job.
+Software,Java,My favorite language taught for 3 semesters at SDSU with strong OOP emphasis,Java is the first language I learned and I loved it. I took 3 semester courses with the SDSU Computer Science department that used Java as the primary language. The most impressive work I've done in Java was in my Data Structures course where I implemented product inventory database that used hashes and quicksort.
+Software,Python,Developed several GUIs and Server/Client applications,<a style='color: blue' href='https://github.com/Kheirlb/purethermal1-uvc-capture'>Python</a>
+Software,C/C++,"Completed several professional projects using C, used C++ in a classroom setting",
+Software,LabView,I frequently use at Parabilis Space Technologies,
+Software,FORTRAN,Only a few scripts in FORTRAN 95 in classroom setting,
+Software,JavaScript,I used Javascript to make this website that you are on now,
+Software,Racket,A functional language that I used in classroom setting,
+Software,Linux/Unix,Extremely comfortable with Raspbian & Ubuntu,"Started out with Raspbian and eventually became exposed to Ubuntu, Fedora, RedHat, and more. I know my ways around the linux terminal really well."
 Software,IT/Network,"Direct experience managing and using IP Addresses, SSH, FTP, TCP/UDP, and MQTT",
-Software,Version Control,Use Git/GitHub and TortoiseSVN at work,Significant experience with Git/SVN
+Software,Version Control,Use Git for GitHub and TortoiseSVN at work,Significant experience with Git/SVN
 CAD,PTC Creo/Simulate,"Professional experience with parts, drawings, & assemblies",Most professional experience I have with CAD is with PTC Creo and Simulate. Have managed professional drawings and large complex assemblies on critical time schedules.
 CAD,Solidworks,Frequently used as Design Lead with the SDSU Rocket Project,
 CAD,FEMAP/NASTRAN,Used in academic setting for dynamic modal analysis,
@@ -29,10 +31,9 @@ Aerospace,High Pressure,Designed and operated high pressure helium and nitrogen 
 Aerospace,Propulsion,Strong background in liquid bi-propellant and hybrid technologies,
 Aerospace,FEA,Experience with Finite Element Analysis using Simulate and NASTRAN,
 Aerospace,PDM/PLM,Managed configuration control with Windchill/GrabCAD,
-Robotics,Frame Transform Math,Proficient - Boston Dynamics,
 Robotics,Jacobians,Used in academic setting and can find/avoid singularities,
 Robotics,Genetic Algorithms,"Exposure to topic involving selection, operators, and fitness evalulation",
-Robotics,PID Controllers,Strong exposure and practice developing and using PID controllers,
+Robotics,PID Controllers,Strong exposure and practice developing and using PID controllers ,
 Robotics,Inverse Kinematics,Developed custom IK code using the decomposition and approximation method,<a style='color: blue' href='https://github.com/Kheirlb/CS556/blob/master/report/workSpace1.png'>Inverse<br>Kinematics</a>
 Leadership,President SDSU<br>Rocket Project,"Project Manager for student team designing, building, & launching liquid bi-propellant rockets",<a style='color: blue' href='https://www.sdsurocketproject.org/our-team'>President<br>SDSURP</a>
 Leadership,Senior Engineer SDSU<br>Rocket Project,Advised and taught new members various aerospace skills,
