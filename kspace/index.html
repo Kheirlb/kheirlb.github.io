@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Orbital mechanics</title>
+  <script>
+    window.MathJax = {
+      loader: {load: ['[tex]/units']},
+      tex: {
+        packages: {'[+]': ['units']},
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js">
+  </script>
+</head>
+<body style="text-align: center;">
+<p style="padding-top: 50px;">
+  Tsiolkovsky rocket equation
+  \[\Delta v = v_e \, \ln(\frac{m_0}{m_f})\]
+</p>
+<p>
+  Specific orbital energy:
+  \[\varepsilon= -\frac{\mu}{2a}\]
+</p>
+<p>
+  Vis-viva equation:
+  \[v^{2} = \mu\left(\frac{2}{r} - \frac{1}{a}\right)\]
+</p>
+<p>
+  Specific angular momentum:
+  \[\vec{h} = \vec{r} \times \vec{v}\]
+</p>
+<p>
+  Orbital period (Kepler's Third law):
+  \[T = 2 \pi \sqrt{\frac{a^3}{\mu}}\]
+</p>
+<p>
+  Constants (km, s):
+  \[\mu_{Earth} = 398600~\unitfrac{km^3}{s^2}\]
+  \[R_{Earth} = 6378~\units{km}\]
+</p>
+</body>
+</html>
