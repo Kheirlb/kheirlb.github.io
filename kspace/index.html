@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Orbital mechanics</title>
+  <link rel="icon" type="image/svg+xml" href="orbit.svg">
   <script>
     window.MathJax = {
       loader: {load: ['[tex]/units']},
@@ -19,7 +20,9 @@
   </script>
 </head>
 <body style="text-align: center;">
-<p style="padding-top: 50px;">
+<div id="nav-placeholder-proj">
+</div>
+<p style="padding-top: 10px;">
   Tsiolkovsky rocket equation
   \[\Delta v = v_e \, \ln(\frac{m_0}{m_f})\]
 </p>
@@ -36,8 +39,13 @@
   \[\vec{h} = \vec{r} \times \vec{v}\]
 </p>
 <p>
-  Orbital period (Kepler's Third law):
+  Orbital period (Kepler's third law):
   \[T = 2 \pi \sqrt{\frac{a^3}{\mu}}\]
+</p>
+<p>
+  Orbital equation (ellipse in polar coordinates):
+  \[r={\frac {p}{1+e\cos \theta }}\]
+  \[p=h^{2}/\mu\]
 </p>
 <p>
   Constants (km, s):
